@@ -1,0 +1,480 @@
+body, html {
+  font-family: 'Playfair Display', serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+/*  font-family: 'Droid Serif', serif;*/
+  color: #777;
+}
+
+
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#ulnav a:link{
+    text-decoration: none;
+    color: black;
+}
+
+#ulnav a:visited{
+    color: black;
+}
+
+#ulnav il:visited{
+    color: black;
+}
+
+#ulnav li:hover{
+    color: dimgray;
+}
+
+#ulnav h1:hover{
+    color: black;
+}
+
+/*begin small devices*/
+@media (max-width: 500px) {
+    #navbar{
+        font-family: 'Playfair Display', serif;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        background: white;
+    }
+
+    
+    .astroTitle{
+        width: 30%;
+        float: left;
+        font-size: 4vw;
+        text-decoration: underline;
+        position: relative;
+        z-index: 100;
+    }
+
+    
+    .nav {
+        font-size: 2vw;
+        display: inline-block;
+        float: left;
+        padding-right: 2%;
+        list-style:none;
+        position: relative;
+    }
+    
+
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+/*  opacity: 0.65;*/
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("img_parallax.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("img_parallax2.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("img_parallax3.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+/*  top: -85%;*/
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+/*  background-color: #111;*/
+    color: black;
+    float: left;
+}
+
+.astro{
+      letter-spacing: -20px;
+      font-size: 25em;
+}
+
+#intro{
+    padding-top: 15%;
+    font-size: 25px;
+    color: black;
+    float: right;
+    margin-right: 5%;
+    text-align: left;
+    -webkit-transition-delay: 5s; /* Safari */
+    transition-delay: 5s;
+}
+
+
+h3 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font: 20px 'Playfair Display', serif;
+  color: #111;
+}
+
+.const{
+    color:#ddd;
+    height: 100%;
+/*    background-color:#282E34;*/
+    text-align:center;
+    padding:50px 80px;
+    text-align: justify;"
+}
+
+.constName{
+    padding-left: 2%;
+    float: left;
+    background-color:transparent;
+    color: black;
+    font-size: 5em;
+    position: relative;
+    bottom: 250px;
+    flex-wrap: wrap;
+    z-index: 99;
+}
+
+.constIMG{
+    z-index: 0;
+    width: 70%;
+    float: right;
+    position: relative;
+    top: -90%;
+    bottom: 500px;
+    padding-bottom: 30%;
+}
+
+.constName2{
+    padding-left: 2%;
+    float: right;
+    background-color:transparent;
+    color: black;
+    font-size: 5em;
+    position: relative;
+    bottom: 250px;
+    flex-wrap: wrap;
+    z-index: 98;
+    padding-right: 2%;
+    
+}
+
+.constIMG2{
+    z-index: 0;
+    width: 70%;
+    float: left;
+    position: relative;
+    top: -90%;
+    bottom: 500px;
+    padding-bottom: 30%;
+}
+
+.bgimg-2{
+    margin-top: 70%;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+/* bEGIN NAV */
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+    
+}
+
+/*begin large devices*/
+@media (min-width: 500px) {
+    #navbar{
+        font-family: 'Playfair Display', serif;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        background: white;
+    }
+
+    
+    .astroTitle{
+        width: 30%;
+        float: left;
+        font-size: 2vw;
+        text-decoration: underline;
+        position: relative;
+        z-index: 100;
+    }
+
+    
+    .nav {
+        font-size: 2vw;
+        display: inline-block;
+        float: left;
+        padding-right: 2%;
+        list-style:none;
+        position: relative;
+    }
+    
+
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+/*  opacity: 0.65;*/
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("img_parallax.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("img_parallax2.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("img_parallax3.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: -86%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+/*  background-color: #111;*/
+    color: black;
+    float: left;
+}
+
+.astro{
+      letter-spacing: -50px;
+      font-size: 60vw;
+}
+
+#intro{
+    padding-top: 30%;
+    font-size: 25px;
+    color: black;
+    float: right;
+    margin-right: 5%;
+    text-align: left;
+    -webkit-transition-delay: 5s; /* Safari */
+    transition-delay: 5s;
+}
+
+
+h3 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font: 20px 'Playfair Display', serif;
+  color: #111;
+}
+
+.const{
+    color:#ddd;
+    height: 100%;
+/*    background-color:#282E34;*/
+    text-align:center;
+    padding:50px 80px;
+    text-align: justify;"
+}
+
+.constName{
+    padding-left: 2%;
+    float: left;
+    background-color:transparent;
+    color: black;
+    font-size: 5em;
+    position: relative;
+    bottom: 250px;
+    flex-wrap: wrap;
+    z-index: 99;
+}
+
+.constIMG{
+    z-index: 0;
+    width: 70%;
+    float: right;
+    position: relative;
+    top: -90%;
+    bottom: 500px;
+    padding-bottom: 30%;
+}
+
+.constName2{
+    padding-left: 2%;
+    float: right;
+    background-color:transparent;
+    color: black;
+    font-size: 5em;
+    position: relative;
+    bottom: 250px;
+    flex-wrap: wrap;
+    z-index: 98;
+    padding-right: 2%;
+    
+}
+
+.constIMG2{
+    z-index: 0;
+    width: 70%;
+    float: left;
+    position: relative;
+    top: -90%;
+    bottom: 500px;
+    padding-bottom: 30%;
+}
+
+.bgimg-2{
+    margin-top: 70%;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+/* bEGIN NAV */
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+    
+}
